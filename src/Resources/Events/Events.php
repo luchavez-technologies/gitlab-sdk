@@ -40,6 +40,6 @@ class Events extends BaseResource
             return $result;
         }
 
-        return $this->parseResponse($this->getMakeRequest()->data($attributes)->get(append_url: 'events'));
+        return $this->parseResponse($this->getSimpleHttp()->data($attributes)->get(append_url: 'events'));
     }
 }

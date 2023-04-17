@@ -2,7 +2,7 @@
 
 namespace Luchavez\GitlabSdk\Resources\Events;
 
-use Luchavez\ApiSdkKit\Services\MakeRequest;
+use Luchavez\ApiSdkKit\Services\SimpleHttp;
 use Luchavez\GitlabSdk\Data\Events\ListUserContributionEventsAttributes;
 use Luchavez\GitlabSdk\Resources\BaseResource;
 use Illuminate\Http\Client\Response;
@@ -18,12 +18,12 @@ use Illuminate\Support\Collection;
 class UserContributionEvents extends BaseResource
 {
     /**
-     * @param  MakeRequest  $make_request
+     * @param  SimpleHttp  $simple_http
      * @param  int|string  $id_or_username
      */
-    public function __construct(protected MakeRequest $make_request, protected int|string $id_or_username)
+    public function __construct(protected SimpleHttp $simple_http, protected int|string $id_or_username)
     {
-        parent::__construct($make_request);
+        parent::__construct($simple_http);
     }
 
     /**
@@ -50,6 +50,6 @@ class UserContributionEvents extends BaseResource
             return $result;
         }
 
-        return $this->parseResponse($this->getMakeRequest()->data($attributes)->get("users/$this->id_or_username/events"));
+        return $this->parseResponse($this->getSimpleHttp()->data($attributes)->get("users/$this->id_or_username/events"));
     }
 }

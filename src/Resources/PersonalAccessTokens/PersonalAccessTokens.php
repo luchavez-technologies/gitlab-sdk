@@ -40,6 +40,6 @@ class PersonalAccessTokens extends BaseResource
             return $result;
         }
 
-        return $this->parseResponse($this->getMakeRequest()->data($attributes)->get('personal_access_tokens'));
+        return $this->parseResponse($this->getSimpleHttp()->data($attributes)->get('personal_access_tokens'));
     }
 }

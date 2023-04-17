@@ -2,7 +2,7 @@
 
 namespace Luchavez\GitlabSdk\Resources\PersonalAccessTokens;
 
-use Luchavez\ApiSdkKit\Services\MakeRequest;
+use Luchavez\ApiSdkKit\Services\SimpleHttp;
 use Luchavez\GitlabSdk\Resources\BaseResource;
 use Illuminate\Http\Client\Response;
 use Illuminate\Support\Collection;
@@ -17,12 +17,12 @@ use Illuminate\Support\Collection;
 class PersonalAccessToken extends BaseResource
 {
     /**
-     * @param  MakeRequest  $make_request
+     * @param  SimpleHttp  $simple_http
      * @param  int|string|null  $id
      */
-    public function __construct(protected MakeRequest $make_request, protected int|string|null $id = null)
+    public function __construct(protected SimpleHttp $simple_http, protected int|string|null $id = null)
     {
-        parent::__construct($make_request);
+        parent::__construct($simple_http);
     }
 
     /**
@@ -34,7 +34,7 @@ class PersonalAccessToken extends BaseResource
     {
         $id = $this->id ?? 'self';
 
-        return $this->parseResponse($this->getMakeRequest()->get("personal_access_tokens/$id"));
+        return $this->parseResponse($this->getSimpleHttp()->get("personal_access_tokens/$id"));
     }
 
     /**
@@ -46,6 +46,6 @@ class PersonalAccessToken extends BaseResource
     {
         $id = $this->id ?? 'self';
 
-        return $this->getMakeRequest()->delete("personal_access_tokens/$id")->successful();
+        return $this->getSimpleHttp()->delete("personal_access_tokens/$id")->successful();
     }
 }

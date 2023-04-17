@@ -2,7 +2,7 @@
 
 namespace Luchavez\GitlabSdk\Resources\Projects;
 
-use Luchavez\ApiSdkKit\Services\MakeRequest;
+use Luchavez\ApiSdkKit\Services\SimpleHttp;
 use Luchavez\GitlabSdk\Data\Members\ListMembersAttributes;
 use Luchavez\GitlabSdk\Data\Packages\ListProjectPackageFilesAttributes;
 use Luchavez\GitlabSdk\Data\Packages\ListProjectPackagesAttributes;
@@ -20,12 +20,12 @@ use Illuminate\Support\Collection;
 class Project extends BaseResource
 {
     /**
-     * @param  MakeRequest  $make_request
+     * @param  SimpleHttp  $simple_http
      * @param  int  $id
      */
-    public function __construct(protected MakeRequest $make_request, protected int $id)
+    public function __construct(protected SimpleHttp $simple_http, protected int $id)
     {
-        parent::__construct($make_request);
+        parent::__construct($simple_http);
     }
 
     /**
@@ -35,7 +35,7 @@ class Project extends BaseResource
      */
     public function get(): Collection|Response|null
     {
-        return $this->parseResponse($this->getMakeRequest()->get("projects/$this->id"));
+        return $this->parseResponse($this->getSimpleHttp()->get("projects/$this->id"));
     }
 
     /**
@@ -62,7 +62,7 @@ class Project extends BaseResource
             return $result;
         }
 
-        return $this->parseResponse($this->getMakeRequest()->data($attributes)->get("projects/$this->id/packages"));
+        return $this->parseResponse($this->getSimpleHttp()->data($attributes)->get("projects/$this->id/packages"));
     }
 
     /**
@@ -73,7 +73,7 @@ class Project extends BaseResource
      */
     public function package(int $package_id): Response|Collection|null
     {
-        return $this->parseResponse($this->getMakeRequest()->get("projects/$this->id/packages/$package_id"));
+        return $this->parseResponse($this->getSimpleHttp()->get("projects/$this->id/packages/$package_id"));
     }
 
     /**
@@ -84,7 +84,7 @@ class Project extends BaseResource
      */
     public function deletePackage(int $package_id): bool
     {
-        return $this->getMakeRequest()->delete("projects/$this->id/packages/$package_id")->successful();
+        return $this->getSimpleHttp()->delete("projects/$this->id/packages/$package_id")->successful();
     }
 
     /**
@@ -112,7 +112,7 @@ class Project extends BaseResource
             return $result;
         }
 
-        return $this->parseResponse($this->getMakeRequest()->get("projects/$this->id/packages/$package_id/package_files"));
+        return $this->parseResponse($this->getSimpleHttp()->get("projects/$this->id/packages/$package_id/package_files"));
     }
 
     /**
@@ -124,7 +124,7 @@ class Project extends BaseResource
      */
     public function deletePackageFile(int $package_id, int $package_file_id): bool
     {
-        return $this->getMakeRequest()
+        return $this->getSimpleHttp()
             ->delete("projects/$this->id/packages/$package_id/package_files/$package_file_id")
             ->successful();
     }
@@ -153,6 +153,6 @@ class Project extends BaseResource
             return $result;
         }
 
-        return $this->parseResponse($this->getMakeRequest()->data($attributes)->get("projects/$this->id/members"));
+        return $this->parseResponse($this->getSimpleHttp()->data($attributes)->get("projects/$this->id/members"));
     }
 }

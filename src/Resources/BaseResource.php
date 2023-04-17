@@ -2,7 +2,7 @@
 
 namespace Luchavez\GitlabSdk\Resources;
 
-use Luchavez\ApiSdkKit\Services\MakeRequest;
+use Luchavez\ApiSdkKit\Services\SimpleHttp;
 use Illuminate\Http\Client\Response;
 use Illuminate\Support\Collection;
 
@@ -19,18 +19,18 @@ abstract class BaseResource
     protected bool $as_collection = true;
 
     /**
-     * @param  MakeRequest  $make_request
+     * @param  SimpleHttp  $simple_http
      */
-    public function __construct(protected MakeRequest $make_request)
+    public function __construct(protected SimpleHttp $simple_http)
     {
     }
 
     /**
-     * @return MakeRequest
+     * @return SimpleHttp
      */
-    public function getMakeRequest(): MakeRequest
+    public function getSimpleHttp(): SimpleHttp
     {
-        return $this->make_request;
+        return $this->simple_http;
     }
 
     /**

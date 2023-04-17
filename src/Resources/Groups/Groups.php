@@ -40,6 +40,6 @@ class Groups extends BaseResource
             return $result;
         }
 
-        return $this->parseResponse($this->getMakeRequest()->data($attributes)->executeGet('groups'));
+        return $this->parseResponse($this->getSimpleHttp()->data($attributes)->executeGet('groups'));
     }
 }
