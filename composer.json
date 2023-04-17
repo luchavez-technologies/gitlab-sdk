@@ -1,17 +1,12 @@
 {
     "name": "luchavez/gitlab-sdk",
-    "description": "Gitlab REST API Laravel-based SDK",
+    "description": "Gitlab REST API SDK for Laravel",
     "license": "MIT",
     "authors": [
         {
             "name": "James Carlo Luchavez",
             "email": "jamescarloluchavez@gmail.com",
             "homepage": "https://www.linkedin.com/in/jsluchavez/"
-        },
-        {
-            "name": "Fligno",
-            "email": "apps@fligno.com",
-            "homepage": "https://fligno.com/"
         }
     ],
     "homepage": "https://github.com/luchmewep/gitlab-sdk",

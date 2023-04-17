@@ -24,7 +24,7 @@ class GPGKeys extends BaseResource
      */
     public function all(): Response|Collection|null
     {
-        return $this->parseResponse($this->getMakeRequest()->get('user/gpg_keys'));
+        return $this->parseResponse($this->getSimpleHttp()->get('user/gpg_keys'));
     }
 
     /**
@@ -35,6 +35,6 @@ class GPGKeys extends BaseResource
      */
     public function get(int $key_id): Response|Collection|null
     {
-        return $this->parseResponse($this->getMakeRequest()->get("user/gpg_keys/$key_id"));
+        return $this->parseResponse($this->getSimpleHttp()->get("user/gpg_keys/$key_id"));
     }
 }

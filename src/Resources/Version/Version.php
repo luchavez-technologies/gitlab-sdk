@@ -22,6 +22,6 @@ class Version extends BaseResource
      */
     public function get(): Collection|Response|null
     {
-        return $this->parseResponse($this->getMakeRequest()->get('version'));
+        return $this->parseResponse($this->getSimpleHttp()->get('version'));
     }
 }

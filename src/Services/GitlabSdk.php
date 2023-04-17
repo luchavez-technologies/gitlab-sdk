@@ -4,7 +4,7 @@ namespace Luchavez\GitlabSdk\Services;
 
 use Luchavez\ApiSdkKit\Abstracts\BaseApiSdkService;
 use Luchavez\ApiSdkKit\Interfaces\CanGetHealthCheckInterface;
-use Luchavez\ApiSdkKit\Services\MakeRequest;
+use Luchavez\ApiSdkKit\Services\SimpleHttp;
 use Luchavez\GitlabSdk\Resources\Events\Events;
 use Luchavez\GitlabSdk\Resources\Events\UserContributionEvents;
 use Luchavez\GitlabSdk\Resources\Groups\Group;
@@ -86,11 +86,11 @@ class GitlabSdk extends BaseApiSdkService implements CanGetHealthCheckInterface
     }
 
     /**
-     * @return MakeRequest
+     * @return SimpleHttp
      */
-    public function getMakeRequest(): MakeRequest
+    public function getSimpleHttp(): SimpleHttp
     {
-        return parent::getMakeRequest()->returnAsResponse();
+        return parent::getHttp(return_as_model: false);
     }
 
     /***** RESOURCES*****/
@@ -102,7 +102,7 @@ class GitlabSdk extends BaseApiSdkService implements CanGetHealthCheckInterface
      */
     public function events(): Events
     {
-        return new Events($this->getMakeRequest());
+        return new Events($this->getSimpleHttp());
     }
 
     /**
@@ -113,7 +113,7 @@ class GitlabSdk extends BaseApiSdkService implements CanGetHealthCheckInterface
      */
     public function userContributionEvents(int|string $id_or_username): UserContributionEvents
     {
-        return new UserContributionEvents($this->getMakeRequest(), $id_or_username);
+        return new UserContributionEvents($this->getSimpleHttp(), $id_or_username);
     }
 
     /**
@@ -124,7 +124,7 @@ class GitlabSdk extends BaseApiSdkService implements CanGetHealthCheckInterface
      */
     public function group(int $id): Group
     {
-        return new Group($this->getMakeRequest(), $id);
+        return new Group($this->getSimpleHttp(), $id);
     }
 
     /**
@@ -134,7 +134,7 @@ class GitlabSdk extends BaseApiSdkService implements CanGetHealthCheckInterface
      */
     public function groups(): Groups
     {
-        return new Groups($this->getMakeRequest());
+        return new Groups($this->getSimpleHttp());
     }
 
     /**
@@ -144,7 +144,7 @@ class GitlabSdk extends BaseApiSdkService implements CanGetHealthCheckInterface
      */
     public function gpgKeys(): GPGKeys
     {
-        return new GPGKeys($this->getMakeRequest());
+        return new GPGKeys($this->getSimpleHttp());
     }
 
     /**
@@ -154,7 +154,7 @@ class GitlabSdk extends BaseApiSdkService implements CanGetHealthCheckInterface
      */
     public function sshKeys(): SSHKeys
     {
-        return new SSHKeys($this->getMakeRequest());
+        return new SSHKeys($this->getSimpleHttp());
     }
 
     /**
@@ -164,7 +164,7 @@ class GitlabSdk extends BaseApiSdkService implements CanGetHealthCheckInterface
      */
     public function metadata(): Metadata
     {
-        return new Metadata($this->getMakeRequest());
+        return new Metadata($this->getSimpleHttp());
     }
 
     /**
@@ -175,7 +175,7 @@ class GitlabSdk extends BaseApiSdkService implements CanGetHealthCheckInterface
      */
     public function personalAccessToken(int|string|null $id = null): PersonalAccessToken
     {
-        return new PersonalAccessToken($this->getMakeRequest(), $id);
+        return new PersonalAccessToken($this->getSimpleHttp(), $id);
     }
 
     /**
@@ -185,7 +185,7 @@ class GitlabSdk extends BaseApiSdkService implements CanGetHealthCheckInterface
      */
     public function personalAccessTokens(): PersonalAccessTokens
     {
-        return new PersonalAccessTokens($this->getMakeRequest());
+        return new PersonalAccessTokens($this->getSimpleHttp());
     }
 
     /**
@@ -196,7 +196,7 @@ class GitlabSdk extends BaseApiSdkService implements CanGetHealthCheckInterface
      */
     public function project(int $id): Project
     {
-        return new Project($this->getMakeRequest(), $id);
+        return new Project($this->getSimpleHttp(), $id);
     }
 
     /**
@@ -206,7 +206,7 @@ class GitlabSdk extends BaseApiSdkService implements CanGetHealthCheckInterface
      */
     public function projects(): Projects
     {
-        return new Projects($this->getMakeRequest());
+        return new Projects($this->getSimpleHttp());
     }
 
     /**
@@ -216,7 +216,7 @@ class GitlabSdk extends BaseApiSdkService implements CanGetHealthCheckInterface
      */
     public function user(): User
     {
-        return new User($this->getMakeRequest());
+        return new User($this->getSimpleHttp());
     }
 
     /**
@@ -226,7 +226,7 @@ class GitlabSdk extends BaseApiSdkService implements CanGetHealthCheckInterface
      */
     public function version(): Version
     {
-        return new Version($this->getMakeRequest());
+        return new Version($this->getSimpleHttp());
     }
 
     /**

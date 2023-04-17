@@ -40,6 +40,6 @@ class Projects extends BaseResource
             return $result;
         }
 
-        return $this->parseResponse($this->getMakeRequest()->data($attributes)->executeGet('projects'));
+        return $this->parseResponse($this->getSimpleHttp()->data($attributes)->executeGet('projects'));
     }
 }

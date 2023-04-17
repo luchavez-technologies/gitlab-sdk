@@ -2,7 +2,7 @@
 
 namespace Luchavez\GitlabSdk\Resources\Groups;
 
-use Luchavez\ApiSdkKit\Services\MakeRequest;
+use Luchavez\ApiSdkKit\Services\SimpleHttp;
 use Luchavez\GitlabSdk\Data\Groups\ListSubgroupsAttributes;
 use Luchavez\GitlabSdk\Data\Members\ListMembersAttributes;
 use Luchavez\GitlabSdk\Data\Packages\ListGroupPackagesAttributes;
@@ -22,12 +22,12 @@ use Illuminate\Support\Collection;
 class Group extends BaseResource
 {
     /**
-     * @param  MakeRequest  $make_request
+     * @param  SimpleHttp  $simple_http
      * @param  int  $id
      */
-    public function __construct(protected MakeRequest $make_request, protected int $id)
+    public function __construct(protected SimpleHttp $simple_http, protected int $id)
     {
-        parent::__construct($make_request);
+        parent::__construct($simple_http);
     }
 
     /**
@@ -37,7 +37,7 @@ class Group extends BaseResource
      */
     public function get(): Collection|Response|null
     {
-        return $this->parseResponse($this->getMakeRequest()->get("groups/$this->id"));
+        return $this->parseResponse($this->getSimpleHttp()->get("groups/$this->id"));
     }
 
     /**
@@ -47,7 +47,7 @@ class Group extends BaseResource
      */
     public function avatar(): Collection|Response|null
     {
-        return $this->parseResponse($this->getMakeRequest()->get("groups/$this->id/avatar"));
+        return $this->parseResponse($this->getSimpleHttp()->get("groups/$this->id/avatar"));
     }
 
     /**
@@ -74,7 +74,7 @@ class Group extends BaseResource
             return $result;
         }
 
-        return $this->parseResponse($this->getMakeRequest()->data($attributes)->get("groups/$this->id/subgroups"));
+        return $this->parseResponse($this->getSimpleHttp()->data($attributes)->get("groups/$this->id/subgroups"));
     }
 
     /**
@@ -101,7 +101,7 @@ class Group extends BaseResource
             return $result;
         }
 
-        return $this->parseResponse($this->getMakeRequest()->data($attributes)->get("groups/$this->id/descendant_groups"));
+        return $this->parseResponse($this->getSimpleHttp()->data($attributes)->get("groups/$this->id/descendant_groups"));
     }
 
     /**
@@ -128,7 +128,7 @@ class Group extends BaseResource
             return $result;
         }
 
-        return $this->parseResponse($this->getMakeRequest()->data($attributes)->get("groups/$this->id/projects"));
+        return $this->parseResponse($this->getSimpleHttp()->data($attributes)->get("groups/$this->id/projects"));
     }
 
     /**
@@ -155,7 +155,7 @@ class Group extends BaseResource
             return $result;
         }
 
-        return $this->parseResponse($this->getMakeRequest()->data($attributes)->get("groups/$this->id/projects/shared"));
+        return $this->parseResponse($this->getSimpleHttp()->data($attributes)->get("groups/$this->id/projects/shared"));
     }
 
     /**
@@ -182,7 +182,7 @@ class Group extends BaseResource
             return $result;
         }
 
-        return $this->parseResponse($this->getMakeRequest()->data($attributes)->get("groups/$this->id/packages"));
+        return $this->parseResponse($this->getSimpleHttp()->data($attributes)->get("groups/$this->id/packages"));
     }
 
     /**
@@ -209,6 +209,6 @@ class Group extends BaseResource
             return $result;
         }
 
-        return $this->parseResponse($this->getMakeRequest()->data($attributes)->get("groups/$this->id/members"));
+        return $this->parseResponse($this->getSimpleHttp()->data($attributes)->get("groups/$this->id/members"));
     }
 }

@@ -22,6 +22,6 @@ class Metadata extends BaseResource
      */
     public function get(): Collection|Response|null
     {
-        return $this->parseResponse($this->getMakeRequest()->get('metadata'));
+        return $this->parseResponse($this->getSimpleHttp()->get('metadata'));
     }
 }

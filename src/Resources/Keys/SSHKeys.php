@@ -24,7 +24,7 @@ class SSHKeys extends BaseResource
      */
     public function all(): Response|Collection|null
     {
-        return $this->parseResponse($this->getMakeRequest()->executeGet('user/keys'));
+        return $this->parseResponse($this->getSimpleHttp()->executeGet('user/keys'));
     }
 
     /**
@@ -35,6 +35,6 @@ class SSHKeys extends BaseResource
      */
     public function get(int $key_id): Response|Collection|null
     {
-        return $this->parseResponse($this->getMakeRequest()->get("user/keys/$key_id"));
+        return $this->parseResponse($this->getSimpleHttp()->get("user/keys/$key_id"));
     }
 }

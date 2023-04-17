@@ -27,7 +27,7 @@ class User extends BaseResource
             $data['sudo'] = $id;
         }
 
-        return $this->parseResponse($this->getMakeRequest()->data($data)->get(append_url: 'user'));
+        return $this->parseResponse($this->getSimpleHttp()->data($data)->get(append_url: 'user'));
     }
 
     /**
@@ -37,7 +37,7 @@ class User extends BaseResource
      */
     public function status(): Response|Collection|null
     {
-        return $this->parseResponse($this->getMakeRequest()->get(append_url: 'user/status'));
+        return $this->parseResponse($this->getSimpleHttp()->get(append_url: 'user/status'));
     }
 
     /**
@@ -47,7 +47,7 @@ class User extends BaseResource
      */
     public function preferences(): Response|Collection|null
     {
-        return $this->parseResponse($this->getMakeRequest()->get(append_url: 'user/preferences'));
+        return $this->parseResponse($this->getSimpleHttp()->get(append_url: 'user/preferences'));
     }
 
     /**
@@ -57,6 +57,6 @@ class User extends BaseResource
      */
     public function emails(): Response|Collection|null
     {
-        return $this->parseResponse($this->getMakeRequest()->get(append_url: 'user/emails'));
+        return $this->parseResponse($this->getSimpleHttp()->get(append_url: 'user/emails'));
     }
 }
