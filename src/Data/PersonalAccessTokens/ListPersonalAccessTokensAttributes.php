@@ -2,9 +2,9 @@
 
 namespace Luchavez\GitlabSdk\Data\PersonalAccessTokens;
 
+use Illuminate\Support\Carbon;
 use Luchavez\GitlabSdk\Abstracts\BaseGitlabData;
 use Luchavez\GitlabSdk\Traits\Attributes\OffSetBasedPaginationTrait;
-use Illuminate\Support\Carbon;
 
 /**
  * Class ListPersonalAccessTokensAttributes
@@ -22,49 +22,49 @@ class ListPersonalAccessTokensAttributes extends BaseGitlabData
      *
      * @var string|null
      */
-    public string|null $created_after = null;
+    public ?string $created_after = null;
 
     /**
      * Limit results to PATs created before specified time.
      *
      * @var string|null
      */
-    public string|null $created_before = null;
+    public ?string $created_before = null;
 
     /**
      * Limit results to PATs last used after specified time.
      *
      * @var string|null
      */
-    public string|null $last_used_after = null;
+    public ?string $last_used_after = null;
 
     /**
      * Limit results to PATs last used before specified time.
      *
      * @var string|null
      */
-    public string|null $last_used_before = null;
+    public ?string $last_used_before = null;
 
     /**
      * Limit results to PATs with specified revoked state. Valid values are true and false.
      *
      * @var bool|null
      */
-    public bool|null $revoked = null;
+    public ?bool $revoked = null;
 
     /**
      * Limit results to PATs with name containing search string.
      *
      * @var string|null
      */
-    public string|null $search = null;
+    public ?string $search = null;
 
     /**
      * Limit results to PATs with specified state. Valid values are active and inactive.
      *
      * @var string|null
      */
-    public string|null $state = null;
+    public ?string $state = null;
 
     /**
      * Limit results to PATs owned by specified user.

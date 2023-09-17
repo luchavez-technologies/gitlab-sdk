@@ -21,26 +21,26 @@ class ListMembersAttributes extends BaseJsonSerializable
      *
      * @var string|null
      */
-    public string|null $query = null;
+    public ?string $query = null;
 
     /**
      * Filter the results on the given user IDs
      *
      * @var array|null
      */
-    public array|null $user_ids = null;
+    public ?array $user_ids = null;
 
     /**
      * Filter skipped users out of the results
      *
      * @var array|null
      */
-    public array|null $skip_users = null;
+    public ?array $skip_users = null;
 
     /**
      * Show seat information for users
      *
      * @var bool|null
      */
-    public bool|null $show_seat_info = null;
+    public ?bool $show_seat_info = null;
 }

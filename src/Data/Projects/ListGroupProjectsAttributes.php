@@ -16,7 +16,7 @@ class ListGroupProjectsAttributes extends ListGroupSharedProjectsAttributes
      *
      * @var bool|null
      */
-    public bool|null $owned;
+    public ?bool $owned;
 
     /**
      * Include projects shared to this group.

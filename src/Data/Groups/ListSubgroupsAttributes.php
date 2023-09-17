@@ -21,7 +21,7 @@ class ListSubgroupsAttributes extends BaseJsonSerializable
      *
      * @var int[]|null
      */
-    public array|null $skip_groups;
+    public ?array $skip_groups;
 
     /**
      * Show all the groups you have access to (defaults to false for authenticated users, true for administrators);
@@ -29,14 +29,14 @@ class ListSubgroupsAttributes extends BaseJsonSerializable
      *
      * @var bool|null
      */
-    public bool|null $all_available;
+    public ?bool $all_available;
 
     /**
      * Return the list of authorized groups matching the search criteria
      *
      * @var string|null
      */
-    public string|null $search;
+    public ?string $search;
 
     /**
      * Order groups by name, path, id, or similarity (if searching, introduced in GitLab 14.1). Default is name
@@ -51,14 +51,14 @@ class ListSubgroupsAttributes extends BaseJsonSerializable
      *
      * @var string|null
      */
-    public string|null $sort;
+    public ?string $sort;
 
     /**
      * Include group statistics (administrators only)
      *
      * @var bool|null
      */
-    public bool|null $statistics;
+    public ?bool $statistics;
 
     /**
      * Include custom attributes in response (administrators only)
@@ -67,14 +67,14 @@ class ListSubgroupsAttributes extends BaseJsonSerializable
      *
      * @link https://docs.gitlab.com/ee/api/custom_attributes.html
      */
-    public bool|null $with_custom_attributes;
+    public ?bool $with_custom_attributes;
 
     /**
      * Limit to groups explicitly owned by the current user
      *
      * @var bool|null
      */
-    public bool|null $owned;
+    public ?bool $owned;
 
     /**
      * Limit to groups where current user has at least this access level
@@ -83,7 +83,7 @@ class ListSubgroupsAttributes extends BaseJsonSerializable
      *
      * @link https://docs.gitlab.com/ee/api/members.html#valid-access-levels
      */
-    public int|null $min_access_level;
+    public ?int $min_access_level;
 
     /**
      * @param  string  $order_by

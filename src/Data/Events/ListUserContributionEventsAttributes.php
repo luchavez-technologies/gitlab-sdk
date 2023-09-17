@@ -2,9 +2,9 @@
 
 namespace Luchavez\GitlabSdk\Data\Events;
 
+use Illuminate\Support\Carbon;
 use Luchavez\GitlabSdk\Abstracts\BaseGitlabData;
 use Luchavez\GitlabSdk\Traits\Attributes\OffSetBasedPaginationTrait;
-use Illuminate\Support\Carbon;
 
 /**
  * Class ListUserContributionEventsAttributes
@@ -25,7 +25,7 @@ class ListUserContributionEventsAttributes extends BaseGitlabData
      *
      * @var string|null
      */
-    public string|null $action = null;
+    public ?string $action = null;
 
     /**
      * Include only events of a particular target type.
@@ -34,7 +34,7 @@ class ListUserContributionEventsAttributes extends BaseGitlabData
      *
      * @var string|null
      */
-    public string|null $target_type = null;
+    public ?string $target_type = null;
 
     /**
      * Include only events created before a particular date. View how to format dates.
@@ -43,7 +43,7 @@ class ListUserContributionEventsAttributes extends BaseGitlabData
      *
      * @var string|null
      */
-    public string|null $before = null;
+    public ?string $before = null;
 
     /**
      * Include only events created after a particular date. View how to format dates.
@@ -52,7 +52,7 @@ class ListUserContributionEventsAttributes extends BaseGitlabData
      *
      * @var string|null
      */
-    public string|null $after = null;
+    public ?string $after = null;
 
     /**
      * Sort events in asc or desc order by created_at. Default is desc.

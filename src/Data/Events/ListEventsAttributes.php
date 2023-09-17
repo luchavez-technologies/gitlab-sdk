@@ -16,5 +16,5 @@ class ListEventsAttributes extends ListUserContributionEventsAttributes
      *
      * @var string|null
      */
-    public string|null $scope = null;
+    public ?string $scope = null;
 }

@@ -2,13 +2,13 @@
 
 namespace Luchavez\GitlabSdk\Resources\Projects;
 
+use Illuminate\Http\Client\Response;
+use Illuminate\Support\Collection;
 use Luchavez\ApiSdkKit\Services\SimpleHttp;
 use Luchavez\GitlabSdk\Data\Members\ListMembersAttributes;
 use Luchavez\GitlabSdk\Data\Packages\ListProjectPackageFilesAttributes;
 use Luchavez\GitlabSdk\Data\Packages\ListProjectPackagesAttributes;
 use Luchavez\GitlabSdk\Resources\BaseResource;
-use Illuminate\Http\Client\Response;
-use Illuminate\Support\Collection;
 
 /**
  * Class Project

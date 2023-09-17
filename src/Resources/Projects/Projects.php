@@ -2,10 +2,10 @@
 
 namespace Luchavez\GitlabSdk\Resources\Projects;
 
-use Luchavez\GitlabSdk\Data\Projects\ListProjectsAttributes;
-use Luchavez\GitlabSdk\Resources\BaseResource;
 use Illuminate\Http\Client\Response;
 use Illuminate\Support\Collection;
+use Luchavez\GitlabSdk\Data\Projects\ListProjectsAttributes;
+use Luchavez\GitlabSdk\Resources\BaseResource;
 
 /**
  * Class Projects

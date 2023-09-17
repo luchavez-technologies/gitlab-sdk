@@ -2,6 +2,8 @@
 
 namespace Luchavez\GitlabSdk\Resources\Groups;
 
+use Illuminate\Http\Client\Response;
+use Illuminate\Support\Collection;
 use Luchavez\ApiSdkKit\Services\SimpleHttp;
 use Luchavez\GitlabSdk\Data\Groups\ListSubgroupsAttributes;
 use Luchavez\GitlabSdk\Data\Members\ListMembersAttributes;
@@ -9,8 +11,6 @@ use Luchavez\GitlabSdk\Data\Packages\ListGroupPackagesAttributes;
 use Luchavez\GitlabSdk\Data\Projects\ListGroupProjectsAttributes;
 use Luchavez\GitlabSdk\Data\Projects\ListGroupSharedProjectsAttributes;
 use Luchavez\GitlabSdk\Resources\BaseResource;
-use Illuminate\Http\Client\Response;
-use Illuminate\Support\Collection;
 
 /**
  * Class Group

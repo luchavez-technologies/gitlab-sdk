@@ -2,9 +2,9 @@
 
 namespace Luchavez\GitlabSdk\Resources;
 
-use Luchavez\ApiSdkKit\Services\SimpleHttp;
 use Illuminate\Http\Client\Response;
 use Illuminate\Support\Collection;
+use Luchavez\ApiSdkKit\Services\SimpleHttp;
 
 /**
  * Class BaseResource

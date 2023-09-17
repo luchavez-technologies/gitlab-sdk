@@ -38,7 +38,7 @@ class ListProjectPackagesAttributes extends BaseJsonSerializable
      *
      * @var string|null
      */
-    public string|null $package_type;
+    public ?string $package_type;
 
     /**
      * Filter the project packages with a fuzzy search by name.
@@ -46,7 +46,7 @@ class ListProjectPackagesAttributes extends BaseJsonSerializable
      *
      * @var string|null
      */
-    public string|null $package_name;
+    public ?string $package_name;
 
     /**
      * When set to true, versionless packages are included in the response.
@@ -54,7 +54,7 @@ class ListProjectPackagesAttributes extends BaseJsonSerializable
      *
      * @var bool|null
      */
-    public bool|null $include_versionless;
+    public ?bool $include_versionless;
 
     /**
      * Filter the returned packages by status.

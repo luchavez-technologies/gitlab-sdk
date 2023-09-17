@@ -2,6 +2,8 @@
 
 namespace Luchavez\GitlabSdk\Services;
 
+use Illuminate\Http\Client\Response;
+use Illuminate\Support\Collection;
 use Luchavez\ApiSdkKit\Abstracts\BaseApiSdkService;
 use Luchavez\ApiSdkKit\Interfaces\CanGetHealthCheckInterface;
 use Luchavez\ApiSdkKit\Services\SimpleHttp;
@@ -18,8 +20,6 @@ use Luchavez\GitlabSdk\Resources\Projects\Project;
 use Luchavez\GitlabSdk\Resources\Projects\Projects;
 use Luchavez\GitlabSdk\Resources\Users\User;
 use Luchavez\GitlabSdk\Resources\Version\Version;
-use Illuminate\Http\Client\Response;
-use Illuminate\Support\Collection;
 
 /**
  * Class GitlabSdk
@@ -31,7 +31,7 @@ class GitlabSdk extends BaseApiSdkService implements CanGetHealthCheckInterface
     /**
      * @param  string|null  $privateToken
      */
-    public function __construct(protected string|null $privateToken)
+    public function __construct(protected ?string $privateToken)
     {
         $this->setHeaders(
             [
@@ -57,9 +57,9 @@ class GitlabSdk extends BaseApiSdkService implements CanGetHealthCheckInterface
 
     /**
      * @param  string|null  $append_url
-     * @return string
+     * @return string|null
      */
-    public function getBaseUrl(string $append_url = null): string
+    public function getBaseUrl(string $append_url = null): ?string
     {
         $url = $this->getUrl('/api/v4');
 
@@ -72,7 +72,7 @@ class GitlabSdk extends BaseApiSdkService implements CanGetHealthCheckInterface
      * @param  string|null  $append_url
      * @return string|null
      */
-    protected function cleanAppendUrl(string $append_url = null): string|null
+    protected function cleanAppendUrl(string $append_url = null): ?string
     {
         return $append_url ? ltrim(trim($append_url), '/') : null;
     }
@@ -173,7 +173,7 @@ class GitlabSdk extends BaseApiSdkService implements CanGetHealthCheckInterface
      *
      * @link https://docs.gitlab.com/ee/api/personal_access_tokens.html
      */
-    public function personalAccessToken(int|string|null $id = null): PersonalAccessToken
+    public function personalAccessToken(int|string $id = null): PersonalAccessToken
     {
         return new PersonalAccessToken($this->getSimpleHttp(), $id);
     }

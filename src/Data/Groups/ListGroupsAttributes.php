@@ -16,5 +16,5 @@ class ListGroupsAttributes extends ListSubgroupsAttributes
      *
      * @var bool|null
      */
-    public bool|null $top_level_only;
+    public ?bool $top_level_only;
 }

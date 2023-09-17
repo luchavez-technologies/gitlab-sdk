@@ -2,10 +2,10 @@
 
 namespace Luchavez\GitlabSdk\Resources\Groups;
 
-use Luchavez\GitlabSdk\Data\Groups\ListGroupsAttributes;
-use Luchavez\GitlabSdk\Resources\BaseResource;
 use Illuminate\Http\Client\Response;
 use Illuminate\Support\Collection;
+use Luchavez\GitlabSdk\Data\Groups\ListGroupsAttributes;
+use Luchavez\GitlabSdk\Resources\BaseResource;
 
 /**
  * Class Groups

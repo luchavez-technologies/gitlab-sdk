@@ -2,9 +2,9 @@
 
 namespace Luchavez\GitlabSdk\Resources\Users;
 
-use Luchavez\GitlabSdk\Resources\BaseResource;
 use Illuminate\Http\Client\Response;
 use Illuminate\Support\Collection;
+use Luchavez\GitlabSdk\Resources\BaseResource;
 
 /**
  * Class User

@@ -2,9 +2,9 @@
 
 namespace Luchavez\GitlabSdk\Resources\Keys;
 
-use Luchavez\GitlabSdk\Resources\BaseResource;
 use Illuminate\Http\Client\Response;
 use Illuminate\Support\Collection;
+use Luchavez\GitlabSdk\Resources\BaseResource;
 
 /**
  * Class Keys
