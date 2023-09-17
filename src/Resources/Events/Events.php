@@ -2,10 +2,10 @@
 
 namespace Luchavez\GitlabSdk\Resources\Events;
 
-use Luchavez\GitlabSdk\Data\Events\ListEventsAttributes;
-use Luchavez\GitlabSdk\Resources\BaseResource;
 use Illuminate\Http\Client\Response;
 use Illuminate\Support\Collection;
+use Luchavez\GitlabSdk\Data\Events\ListEventsAttributes;
+use Luchavez\GitlabSdk\Resources\BaseResource;
 
 /**
  * Class Events

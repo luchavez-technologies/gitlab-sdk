@@ -2,10 +2,10 @@
 
 namespace Luchavez\GitlabSdk\Resources\PersonalAccessTokens;
 
-use Luchavez\ApiSdkKit\Services\SimpleHttp;
-use Luchavez\GitlabSdk\Resources\BaseResource;
 use Illuminate\Http\Client\Response;
 use Illuminate\Support\Collection;
+use Luchavez\ApiSdkKit\Services\SimpleHttp;
+use Luchavez\GitlabSdk\Resources\BaseResource;
 
 /**
  * Class PersonalAccessToken

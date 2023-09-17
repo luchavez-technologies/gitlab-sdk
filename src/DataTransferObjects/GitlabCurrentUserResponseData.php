@@ -2,8 +2,8 @@
 
 namespace Luchavez\GitlabSdk\DataTransferObjects;
 
-use Luchavez\StarterKit\Abstracts\BaseJsonSerializable;
 use Illuminate\Support\Carbon;
+use Luchavez\StarterKit\Abstracts\BaseJsonSerializable;
 
 /**
  * Class GitlabCurrentUserResponseData
@@ -60,12 +60,12 @@ class GitlabCurrentUserResponseData extends BaseJsonSerializable
     /**
      * @var string|null
      */
-    public string|null $location;
+    public ?string $location;
 
     /**
      * @var string|null
      */
-    public string|null $public_email;
+    public ?string $public_email;
 
     /**
      * @var string
@@ -90,7 +90,7 @@ class GitlabCurrentUserResponseData extends BaseJsonSerializable
     /**
      * @var string|null
      */
-    public string|null $organization;
+    public ?string $organization;
 
     /**
      * @var string
@@ -100,7 +100,7 @@ class GitlabCurrentUserResponseData extends BaseJsonSerializable
     /**
      * @var string|null
      */
-    public string|null $pronouns;
+    public ?string $pronouns;
 
     /**
      * @var bool
@@ -110,7 +110,7 @@ class GitlabCurrentUserResponseData extends BaseJsonSerializable
     /**
      * @var string|null
      */
-    public string|null $work_information;
+    public ?string $work_information;
 
     /**
      * @var int
@@ -125,7 +125,7 @@ class GitlabCurrentUserResponseData extends BaseJsonSerializable
     /**
      * @var string|null
      */
-    public string|null $local_time;
+    public ?string $local_time;
 
     /**
      * @var Carbon

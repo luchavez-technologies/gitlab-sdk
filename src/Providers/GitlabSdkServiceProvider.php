@@ -56,7 +56,7 @@ class GitlabSdkServiceProvider extends ServiceProvider
         // Publishing the configuration file.
         $this->publishes(
             [
-                __DIR__.'/../config/gitlab-sdk.php' => config_path('gitlab-sdk.php'),
+                __DIR__.'/../../config/gitlab-sdk.php' => config_path('gitlab-sdk.php'),
             ],
             'gitlab-sdk.config'
         );

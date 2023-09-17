@@ -1,6 +1,6 @@
 {
     "name": "luchavez/gitlab-sdk",
-    "description": "Gitlab REST API SDK for Laravel",
+    "description": "Gitlab REST API SDK for Laravel 8|9|10",
     "license": "MIT",
     "authors": [
         {

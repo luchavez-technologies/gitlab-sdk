@@ -2,11 +2,11 @@
 
 namespace Luchavez\GitlabSdk\Resources\Events;
 
+use Illuminate\Http\Client\Response;
+use Illuminate\Support\Collection;
 use Luchavez\ApiSdkKit\Services\SimpleHttp;
 use Luchavez\GitlabSdk\Data\Events\ListUserContributionEventsAttributes;
 use Luchavez\GitlabSdk\Resources\BaseResource;
-use Illuminate\Http\Client\Response;
-use Illuminate\Support\Collection;
 
 /**
  * Class UserContributionEvents

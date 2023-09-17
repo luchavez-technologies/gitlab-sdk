@@ -21,14 +21,14 @@ class ListGroupSharedProjectsAttributes extends BaseJsonSerializable
      *
      * @var bool|null
      */
-    public bool|null $archived;
+    public ?bool $archived;
 
     /**
      * Limit by visibility public, internal, or private.
      *
      * @var string|null
      */
-    public string|null $visibility;
+    public ?string $visibility;
 
     /**
      * Return projects ordered by id, name, path, created_at, updated_at, similarity (1), or last_activity_at fields.
@@ -51,7 +51,7 @@ class ListGroupSharedProjectsAttributes extends BaseJsonSerializable
      *
      * @var string|null
      */
-    public string|null $search;
+    public ?string $search;
 
     /**
      * Return only limited fields for each project.
@@ -59,14 +59,14 @@ class ListGroupSharedProjectsAttributes extends BaseJsonSerializable
      *
      * @var bool|null
      */
-    public bool|null $simple;
+    public ?bool $simple;
 
     /**
      * Limit by projects starred by the current user.
      *
      * @var bool|null
      */
-    public bool|null $starred;
+    public ?bool $starred;
 
     /**
      * Limit by projects with issues feature enabled.
@@ -91,12 +91,12 @@ class ListGroupSharedProjectsAttributes extends BaseJsonSerializable
      *
      * @var int|null
      */
-    public int|null $min_access_level = null;
+    public ?int $min_access_level = null;
 
     /**
      * Include custom attributes in response (administrators only).
      *
      * @var bool|null
      */
-    public bool|null $with_custom_attributes = null;
+    public ?bool $with_custom_attributes = null;
 }

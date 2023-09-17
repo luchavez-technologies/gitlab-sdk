@@ -2,8 +2,8 @@
 
 namespace Luchavez\GitlabSdk\Abstracts;
 
-use Luchavez\StarterKit\Abstracts\BaseJsonSerializable;
 use Illuminate\Support\Carbon;
+use Luchavez\StarterKit\Abstracts\BaseJsonSerializable;
 
 /**
  * Class BaseGitlabData
@@ -16,7 +16,7 @@ abstract class BaseGitlabData extends BaseJsonSerializable
      * @param  Carbon|string|null  $carbon
      * @return string|null
      */
-    protected function getDateString(Carbon|string|null $carbon): string|null
+    protected function getDateString(Carbon|string|null $carbon): ?string
     {
         return $carbon instanceof Carbon ? $carbon->toDateString() : $carbon;
     }
